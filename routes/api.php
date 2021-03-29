@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::group(['prefix' => 'tasks'], function() {
     Route::get('/', 'TaskController@index');
     Route::get('/{id}', 'TaskController@browseSpecific');
